@@ -11,13 +11,13 @@ public class TelaInicial {
         JButton botaoLivro = new JButton("Livro");
         botaoLivro.addActionListener(e ->{
                 janela.dispose();
-            new CadastroLivro();
+            new InterfaceLivro();
         });
 
         JButton botaoRevista = new JButton("Revista");
         botaoRevista.addActionListener(e ->{
             janela.dispose();
-            new CadastroRevista();
+            new InterfaceRevista();
         });
 
         JButton close = new JButton("Fechar programa");

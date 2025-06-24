@@ -1,64 +1,39 @@
-import javax.swing.*;
-import java.awt.*;
-
 public class CadastroLivro {
-    public CadastroLivro(){
+    private String titulo;
+    private String autor;
+    private String ano;
 
-        JFrame janela = new JFrame("Material Biblioteca");
-        janela.setSize(250, 200);
-        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    public CadastroLivro(String titulo, String autor, String ano) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.ano = ano;
+    }
 
-        JPanel painelLivro = new JPanel();
-        painelLivro.setLayout(new FlowLayout());
+    public String toString() {
+        return "Livro - " + titulo + ", " + autor + ", " + ano;
+    }
 
+    public String getTitulo() {
+        return titulo;
+    }
 
-        JLabel labelTitulo = new JLabel("Titulo:");
-        JTextField textoTitulo = new JTextField(15);
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
-        JLabel labelAutor = new JLabel("Autor:");
-        JTextField textoAutor = new JTextField(15);
+    public String getAutor() {
+        return autor;
+    }
 
-        JLabel labelAno = new JLabel("Ano");
-        JTextField textoAno = new JTextField(4);
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
 
+    public String getAno() {
+        return ano;
+    }
 
-
-        JButton botaoSalvar = new JButton("Salvar");
-
-
-
-        JButton botaoRevista = new JButton("Revista");
-            botaoRevista.addActionListener(e ->{
-                janela.dispose();
-                new CadastroRevista();
-        });
-
-
-
-
-        JButton botaoListagem = new JButton("Listagem");
-
-
-
-
-//CAIXAS DE TEXTOS
-        painelLivro.add(labelTitulo);
-        painelLivro.add(textoTitulo);
-        painelLivro.add(labelAutor);
-        painelLivro.add(textoAutor);
-        painelLivro.add(labelAno);
-        painelLivro.add(textoAno);
-
-
-//BOTOES
-        painelLivro.add(botaoSalvar);
-        painelLivro.add(botaoRevista);
-        painelLivro.add(botaoListagem);
-
-
-
-
-        janela.add(painelLivro);
-        janela.setVisible(true);
+    public void setAno(String ano) {
+        this.ano = ano;
     }
 }

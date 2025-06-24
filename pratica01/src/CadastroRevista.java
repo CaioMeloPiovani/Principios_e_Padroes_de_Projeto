@@ -1,61 +1,61 @@
-import javax.swing.*;
-import java.awt.*;
-
 public class CadastroRevista {
-    public CadastroRevista(){
+    private String titulo;
+    private String org;
+    private String vol;
+    private String nro;
+    private String ano;
 
-        JFrame janela = new JFrame("Cadastro Revista");
-        janela.setSize(250, 200);
-        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    public CadastroRevista(String titulo, String org, String vol, String nro, String ano) {
+        this.titulo = titulo;
+        this.org = org;
+        this.vol = vol;
+        this.nro = nro;
+        this.ano = ano;
+    }
 
-        JPanel painelRevista = new JPanel();
-        painelRevista.setLayout(new FlowLayout());
+    public String getTitulo() {
+        return titulo;
+    }
 
-        JLabel tituloRevista = new JLabel("Titulo: ");
-        JTextField textoTituloRevista = new JTextField(15);
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
-        JLabel org = new JLabel("Org: ");
-        JTextField textoOrgRevista = new JTextField(15);
+    public String getOrg() {
+        return org;
+    }
 
-        JLabel vol = new JLabel("Vol: ");
-        JTextField textoVolRevista = new JTextField(3);
+    public void setOrg(String org) {
+        this.org = org;
+    }
 
-        JLabel nro = new JLabel("Nro: ");
-        JTextField textoNroRevista = new JTextField(3);
+    public String getVol() {
+        return vol;
+    }
 
-        JLabel ano = new JLabel("Ano: ");
-        JTextField textoAnoRevista = new JTextField(3);
+    public void setVol(String vol) {
+        this.vol = vol;
+    }
 
-        JButton botaoSalvar = new JButton("incluir");
+    public String getNro() {
+        return nro;
+    }
 
-        JButton botaoLivros = new JButton("Livros");
-            botaoLivros.addActionListener(e -> {
-                janela.dispose();
-                new CadastroLivro();
-            });
+    public void setNro(String nro) {
+        this.nro = nro;
+    }
 
-        JButton botaoListagem = new JButton("Listagem");
+    public String getAno() {
+        return ano;
+    }
 
-//caixa de textos
-        painelRevista.add(tituloRevista);
-        painelRevista.add(textoTituloRevista);
-        painelRevista.add(org);
-        painelRevista.add(textoOrgRevista);
-        painelRevista.add(vol);
-        painelRevista.add(textoVolRevista);
-        painelRevista.add(nro);
-        painelRevista.add(textoNroRevista);
-        painelRevista.add(ano);
-        painelRevista.add(textoAnoRevista);
+    public void setAno(String ano) {
+        this.ano = ano;
+    }
 
-//Botoes
-        painelRevista.add(botaoSalvar);
-        painelRevista.add(botaoLivros);
-        painelRevista.add(botaoListagem);
-
-
-
-        janela.add(painelRevista);
-        janela.setVisible(true);
+    @Override
+    public String toString() {
+        return "Revista - " + titulo + ", " + org + ", " +  vol + ", " + nro;
     }
 }
+
