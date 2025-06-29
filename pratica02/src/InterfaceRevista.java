@@ -29,23 +29,23 @@ public class InterfaceRevista {
 
 
         JButton botaoSalvar = new JButton("Salvar");
-            botaoSalvar.addActionListener(e -> {
-                String titulo = textoTituloRevista.getText();
-                String org = textoOrgRevista.getText();
-                String vol = textoVolRevista.getText();
-                String nro = textoNroRevista.getText();
-                String ano = textoAnoRevista.getText();
-
-                Listagem.revistas.add(new CadastroRevista(titulo, org, vol, nro, ano));
+        botaoSalvar.addActionListener(e -> {
+            String titulo = textoTituloRevista.getText();
+            String org = textoOrgRevista.getText();
+            String vol = textoVolRevista.getText();
+            String nro = textoNroRevista.getText();
+            String ano = textoAnoRevista.getText();
 
 
-                textoTituloRevista.setText("");
-                textoOrgRevista.setText("");
-                textoVolRevista.setText("");
-                textoNroRevista.setText("");
-                textoAnoRevista.setText("");
+            Material.materiais.add(new CadastroRevista(titulo, ano, org, vol, nro));
 
-            });
+
+            textoTituloRevista.setText("");
+            textoOrgRevista.setText("");
+            textoVolRevista.setText("");
+            textoNroRevista.setText("");
+            textoAnoRevista.setText("");
+        });
 
 
 

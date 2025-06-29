@@ -24,38 +24,33 @@ public class InterfaceLivro {
 
 
         JButton botaoSalvar = new JButton("Salvar");
-            botaoSalvar.addActionListener(e -> {
-                String titulo = textoTitulo.getText();
-                String autor = textoAutor.getText();
-                String ano = textoAno.getText();
-
-                Listagem.livros.add(new CadastroLivro(titulo, autor, ano));
-
-                textoTitulo.setText("");
-                textoAutor.setText("");
-                textoAno.setText("");
-            });
+        botaoSalvar.addActionListener(e -> {
+            String titulo = textoTitulo.getText();
+            String autor = textoAutor.getText();
+            String ano = textoAno.getText();
 
 
-        JButton botaoRevista = new JButton("Voltar");
-            botaoRevista.addActionListener(e ->{
-                janela.dispose();
-                new TelaInicial();
+            Material.materiais.add(new CadastroLivro(titulo, Integer.parseInt(ano), autor));
+
+            textoTitulo.setText("");
+            textoAutor.setText("");
+            textoAno.setText("");
         });
 
 
-
+        JButton botaoVoltar = new JButton("Voltar");
+        botaoVoltar.addActionListener(e ->{
+            janela.dispose();
+            new TelaInicial();
+        });
 
         JButton botaoListagem = new JButton("Listagem");
-            botaoListagem.addActionListener(e ->{
-                janela.dispose();
-                new InterfaceListagem();
-            });
+        botaoListagem.addActionListener(e ->{
+            janela.dispose();
+            new InterfaceListagem();
+        });
 
-
-
-
-//CAIXAS DE TEXTOS
+        //CAIXAS DE TEXTOS
         painelLivro.add(labelTitulo);
         painelLivro.add(textoTitulo);
         painelLivro.add(labelAutor);
@@ -63,16 +58,12 @@ public class InterfaceLivro {
         painelLivro.add(labelAno);
         painelLivro.add(textoAno);
 
-
-//BOTOES
+        //BOTOES
         painelLivro.add(botaoSalvar);
-        painelLivro.add(botaoRevista);
+        painelLivro.add(botaoVoltar);
         painelLivro.add(botaoListagem);
 
-
-
         janela.add(painelLivro);
-
         janela.setVisible(true);
     }
 }

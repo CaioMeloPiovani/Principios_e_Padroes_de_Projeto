@@ -1,31 +1,26 @@
 import javax.swing.*;
-import java.awt.*;
 
 public class InterfaceListagem {
     public InterfaceListagem() {
-        JFrame janela = new JFrame("Listagem");
+        JFrame janela = new JFrame("Listagem de Materiais");
         janela.setSize(400, 300);
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JTextArea areaTexto = new JTextArea(15, 30);
         areaTexto.setEditable(false);
 
+
         StringBuilder sb = new StringBuilder();
+        sb.append("---- LISTAGEM GERAL DE MATERIAIS ----\n\n");
 
-        sb.append("---- LIVROS ----\n");
-        for (CadastroLivro l : Listagem.livros) {
-            sb.append(l.toString()).append("\n");
+        if (Material.materiais.isEmpty()) {
+            sb.append("VAZIO.");
+        } else {
+            for (Material material : Material.materiais) {
+
+                sb.append(material.toString()).append("\n---------------------------------\n");
+            }
         }
-
-        sb.append("\n---- REVISTAS ----\n");
-        for (CadastroRevista r : Listagem.revistas) {
-            sb.append(r.toString()).append("\n");
-        }
-
-        sb.append("\n---- VIDEOS ----\n");
-        //for (CadastroLivro l : Listagem.jornais) {
-         //  sb.append(v.toString()).append("\n");
-        //}
 
         areaTexto.setText(sb.toString());
 
